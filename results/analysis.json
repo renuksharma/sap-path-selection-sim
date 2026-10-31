@@ -1,0 +1,1159 @@
+{
+ "tables": {
+  "operator": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    14.89367816091954,
+    12.660847701149425,
+    17.198491379310344
+   ],
+   "impact_rec": [
+    8.218390804597702,
+    7.604813218390805,
+    8.8722341954023
+   ],
+   "fail_hard": [
+    24.23076923076923,
+    23.723076923076924,
+    24.73846153846154
+   ],
+   "fail_mtu": [
+    891.2285714285714,
+    782.8507142857143,
+    1013.8049999999998
+   ],
+   "impact_mtu": [
+    18.742857142857144,
+    17.31392857142857,
+    20.100357142857142
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 0,
+   "false_changes_all": 11,
+   "false_benign": 0,
+   "n_benign": 69,
+   "failovers_all": 354,
+   "resets_all": 1570,
+   "detected": 234,
+   "helpful": 298,
+   "median_lead_s": -660.0,
+   "p25_lead_s": -840.0,
+   "p75_lead_s": -540.0,
+   "preemptive_share": 0.0,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 22,
+   "stale_hold_scn": 0,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 28.50925925925926,
+     "impact": 12.476851851851851,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 2.4166666666666665,
+     "impact": 1.380952380952381,
+     "false": 4
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 4.745762711864407,
+     "impact": 3.7711864406779663,
+     "false": 7
+    },
+    "combined": {
+     "n": 83,
+     "fail": 16.313253012048193,
+     "impact": 11.94578313253012,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.23076923076923,
+     "impact": 0.7076923076923077,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 0.9855072463768116,
+     "impact": 0.6304347826086957,
+     "false": 0
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 891.2285714285714,
+     "impact": 18.742857142857144,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 43.791666666666664,
+     "impact": 20.729166666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 68.13636363636364,
+     "impact": 22.5,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 19.071428571428573,
+     "impact": 13.035714285714286,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     6.10632183908046,
+     5.603412356321839,
+     6.604992816091953
+    ],
+    "fail": [
+     8.42816091954023,
+     6.146479885057471,
+     10.787715517241377
+    ],
+    "better": 14,
+    "worse": 302
+   }
+  },
+  "bfd_only": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    30.560344827586206,
+    24.10050287356322,
+    36.859267241379314
+   ],
+   "impact_rec": [
+    13.929597701149426,
+    12.909339080459771,
+    14.954669540229881
+   ],
+   "fail_hard": [
+    24.23076923076923,
+    23.723076923076924,
+    24.73846153846154
+   ],
+   "fail_mtu": [
+    891.2285714285714,
+    782.8507142857143,
+    1013.8049999999998
+   ],
+   "impact_mtu": [
+    18.742857142857144,
+    17.31392857142857,
+    20.100357142857142
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 0,
+   "false_changes_all": 0,
+   "false_benign": 0,
+   "n_benign": 69,
+   "failovers_all": 65,
+   "resets_all": 194,
+   "detected": 0,
+   "helpful": 298,
+   "median_lead_s": null,
+   "p25_lead_s": null,
+   "p75_lead_s": null,
+   "preemptive_share": null,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 0,
+   "stale_hold_scn": 0,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 67.91666666666667,
+     "impact": 22.083333333333332,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 2.0,
+     "impact": 1.369047619047619,
+     "false": 0
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 1.5423728813559323,
+     "impact": 4.279661016949152,
+     "false": 0
+    },
+    "combined": {
+     "n": 83,
+     "fail": 26.27710843373494,
+     "impact": 21.43975903614458,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.23076923076923,
+     "impact": 0.7076923076923077,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 0.9855072463768116,
+     "impact": 0.6304347826086957,
+     "false": 0
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 891.2285714285714,
+     "impact": 18.742857142857144,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 63.95454545454545,
+     "impact": 23.181818181818183,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 61.42857142857143,
+     "impact": 22.535714285714285,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     11.817528735632184,
+     10.805890804597702,
+     12.796120689655172
+    ],
+    "fail": [
+     24.094827586206897,
+     17.560272988505748,
+     30.44288793103448
+    ],
+    "better": 22,
+    "worse": 298
+   }
+  },
+  "threshold": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    6.4655172413793105,
+    6.149425287356322,
+    6.773060344827586
+   ],
+   "impact_rec": [
+    2.1120689655172415,
+    1.6608836206896551,
+    2.6279094827586205
+   ],
+   "fail_hard": [
+    24.23076923076923,
+    23.723076923076924,
+    24.73846153846154
+   ],
+   "fail_mtu": [
+    891.2285714285714,
+    782.8507142857143,
+    1013.8049999999998
+   ],
+   "impact_mtu": [
+    18.742857142857144,
+    17.31392857142857,
+    20.100357142857142
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 0,
+   "false_changes_all": 56,
+   "false_benign": 18,
+   "n_benign": 69,
+   "failovers_all": 485,
+   "resets_all": 2347,
+   "detected": 298,
+   "helpful": 298,
+   "median_lead_s": -90.0,
+   "p25_lead_s": -120.0,
+   "p75_lead_s": -30.0,
+   "preemptive_share": 0.12080536912751678,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 22,
+   "stale_hold_scn": 13,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 5.537037037037037,
+     "impact": 3.1527777777777777,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 7.130952380952381,
+     "impact": 0.8095238095238095,
+     "false": 34
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 7.52542372881356,
+     "impact": 0.5,
+     "false": 4
+    },
+    "combined": {
+     "n": 83,
+     "fail": 5.795180722891566,
+     "impact": 2.1867469879518073,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.23076923076923,
+     "impact": 0.7076923076923077,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 5.507246376811594,
+     "impact": 0.9130434782608695,
+     "false": 18
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 891.2285714285714,
+     "impact": 18.742857142857144,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 68.36363636363636,
+     "impact": 22.727272727272727,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 9.142857142857142,
+     "impact": 8.25,
+     "false": 0
+    }
+   }
+  },
+  "weighted": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    6.439655172413793,
+    6.10632183908046,
+    6.7701149425287355
+   ],
+   "impact_rec": [
+    3.3663793103448274,
+    2.8261135057471267,
+    3.977047413793103
+   ],
+   "fail_hard": [
+    24.23076923076923,
+    23.723076923076924,
+    24.73846153846154
+   ],
+   "fail_mtu": [
+    891.2285714285714,
+    782.8507142857143,
+    1013.8049999999998
+   ],
+   "impact_mtu": [
+    18.742857142857144,
+    17.31392857142857,
+    20.100357142857142
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 0,
+   "false_changes_all": 21,
+   "false_benign": 0,
+   "n_benign": 69,
+   "failovers_all": 408,
+   "resets_all": 1914,
+   "detected": 292,
+   "helpful": 298,
+   "median_lead_s": -120.0,
+   "p25_lead_s": -270.0,
+   "p75_lead_s": -30.0,
+   "preemptive_share": 0.10273972602739725,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 22,
+   "stale_hold_scn": 6,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 6.351851851851852,
+     "impact": 6.731481481481482,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 6.0,
+     "impact": 0.6369047619047619,
+     "false": 17
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 7.423728813559322,
+     "impact": 0.5169491525423728,
+     "false": 4
+    },
+    "combined": {
+     "n": 83,
+     "fail": 5.9156626506024095,
+     "impact": 2.674698795180723,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.23076923076923,
+     "impact": 0.7076923076923077,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 0.9855072463768116,
+     "impact": 0.6304347826086957,
+     "false": 0
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 891.2285714285714,
+     "impact": 18.742857142857144,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 68.0,
+     "impact": 22.75,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 8.714285714285714,
+     "impact": 9.892857142857142,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     1.2543103448275863,
+     0.9697557471264369,
+     1.5633620689655165
+    ],
+    "fail": [
+     -0.02586206896551724,
+     -0.28448275862068967,
+     0.2155890804597697
+    ],
+    "better": 8,
+    "worse": 169
+   }
+  },
+  "pred_network": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    5.135057471264368,
+    4.790229885057471,
+    5.485632183908046
+   ],
+   "impact_rec": [
+    2.6594827586206895,
+    2.2255387931034485,
+    3.185344827586207
+   ],
+   "fail_hard": [
+    24.23076923076923,
+    23.723076923076924,
+    24.73846153846154
+   ],
+   "fail_mtu": [
+    891.2285714285714,
+    782.8507142857143,
+    1013.8049999999998
+   ],
+   "impact_mtu": [
+    18.742857142857144,
+    17.31392857142857,
+    20.100357142857142
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 0,
+   "false_changes_all": 7,
+   "false_benign": 3,
+   "n_benign": 69,
+   "failovers_all": 371,
+   "resets_all": 1724,
+   "detected": 246,
+   "helpful": 298,
+   "median_lead_s": -120.0,
+   "p25_lead_s": -180.0,
+   "p75_lead_s": -90.0,
+   "preemptive_share": 0.0,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 22,
+   "stale_hold_scn": 13,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 5.861111111111111,
+     "impact": 3.2546296296296298,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 2.0,
+     "impact": 1.369047619047619,
+     "false": 0
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 6.237288135593221,
+     "impact": 1.7033898305084745,
+     "false": 4
+    },
+    "combined": {
+     "n": 83,
+     "fail": 5.9156626506024095,
+     "impact": 2.9216867469879517,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.23076923076923,
+     "impact": 0.7076923076923077,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 4.3478260869565215,
+     "impact": 0.7463768115942029,
+     "false": 3
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 891.2285714285714,
+     "impact": 18.742857142857144,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 67.81818181818181,
+     "impact": 22.727272727272727,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 9.071428571428571,
+     "impact": 8.285714285714286,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     0.5474137931034483,
+     0.36346982758620694,
+     0.728448275862069
+    ],
+    "fail": [
+     -1.3304597701149425,
+     -1.6667385057471265,
+     -1.0028735632183907
+    ],
+    "better": 32,
+    "worse": 177
+   }
+  },
+  "sap_aware": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    5.206896551724138,
+    4.867744252873564,
+    5.543247126436781
+   ],
+   "impact_rec": [
+    2.060344827586207,
+    1.6120330459770114,
+    2.602083333333333
+   ],
+   "fail_hard": [
+    24.323076923076922,
+    23.8,
+    24.83076923076923
+   ],
+   "fail_mtu": [
+    47.714285714285715,
+    43.2,
+    52.34357142857142
+   ],
+   "impact_mtu": [
+    2.1142857142857143,
+    1.1,
+    3.9010714285714228
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 35,
+   "false_changes_all": 7,
+   "false_benign": 3,
+   "n_benign": 69,
+   "failovers_all": 418,
+   "resets_all": 1947,
+   "detected": 257,
+   "helpful": 298,
+   "median_lead_s": -60.0,
+   "p25_lead_s": -90.0,
+   "p75_lead_s": -30.0,
+   "preemptive_share": 0.0038910505836575876,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 22,
+   "stale_hold_scn": 14,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 5.824074074074074,
+     "impact": 2.3425925925925926,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 2.0,
+     "impact": 1.369047619047619,
+     "false": 0
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 6.966101694915254,
+     "impact": 1.1016949152542372,
+     "false": 4
+    },
+    "combined": {
+     "n": 83,
+     "fail": 5.674698795180723,
+     "impact": 2.0542168674698793,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.323076923076922,
+     "impact": 0.7384615384615385,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 4.405797101449275,
+     "impact": 0.7463768115942029,
+     "false": 3
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 47.714285714285715,
+     "impact": 2.1142857142857143,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 68.0,
+     "impact": 22.704545454545453,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 9.5,
+     "impact": 8.107142857142858,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     -0.05172413793103448,
+     -0.21408045977011494,
+     0.11637931034482758
+    ],
+    "fail": [
+     -1.2586206896551724,
+     -1.6035201149425287,
+     -0.9252873563218391
+    ],
+    "better": 163,
+    "worse": 108
+   }
+  },
+  "sap_aware_no_admission": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    561.3821839080459,
+    461.23793103448276,
+    674.5327586206896
+   ],
+   "impact_rec": [
+    13.995689655172415,
+    12.62194683908046,
+    15.439655172413794
+   ],
+   "fail_hard": [
+    584.8615384615384,
+    424.5046153846154,
+    757.9784615384613
+   ],
+   "fail_mtu": [
+    883.7428571428571,
+    556.9764285714286,
+    1252.7992857142856
+   ],
+   "impact_mtu": [
+    18.585714285714285,
+    14.628214285714286,
+    22.543214285714285
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 35,
+   "false_changes_all": 7,
+   "false_benign": 3,
+   "n_benign": 69,
+   "failovers_all": 418,
+   "resets_all": 1947,
+   "detected": 257,
+   "helpful": 298,
+   "median_lead_s": -60.0,
+   "p25_lead_s": -90.0,
+   "p75_lead_s": -30.0,
+   "preemptive_share": 0.0038910505836575876,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 22,
+   "stale_hold_scn": 14,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 686.1111111111111,
+     "impact": 18.787037037037038,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 2.0,
+     "impact": 1.369047619047619,
+     "false": 0
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 595.1525423728814,
+     "impact": 15.127118644067796,
+     "false": 4
+    },
+    "combined": {
+     "n": 83,
+     "fail": 881.8313253012049,
+     "impact": 18.789156626506024,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 584.8615384615384,
+     "impact": 14.261538461538462,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 180.55072463768116,
+     "impact": 4.8768115942028984,
+     "false": 3
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 883.7428571428571,
+     "impact": 18.585714285714285,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 419.77272727272725,
+     "impact": 29.863636363636363,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 913.3571428571429,
+     "impact": 19.607142857142858,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     11.883620689655173,
+     10.55014367816092,
+     13.2902658045977
+    ],
+    "fail": [
+     554.9166666666666,
+     455.06099137931034,
+     668.0165229885057
+    ],
+    "better": 51,
+    "worse": 254
+   }
+  },
+  "sap_aware_no_gates": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    5.068965517241379,
+    4.752801724137932,
+    5.385057471264368
+   ],
+   "impact_rec": [
+    1.9080459770114941,
+    1.4783764367816092,
+    2.422557471264367
+   ],
+   "fail_hard": [
+    24.323076923076922,
+    23.8,
+    24.83076923076923
+   ],
+   "fail_mtu": [
+    47.714285714285715,
+    43.2,
+    52.34357142857142
+   ],
+   "impact_mtu": [
+    2.1142857142857143,
+    1.1,
+    3.9010714285714228
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 35,
+   "false_changes_all": 7,
+   "false_benign": 3,
+   "n_benign": 69,
+   "failovers_all": 422,
+   "resets_all": 1962,
+   "detected": 257,
+   "helpful": 298,
+   "median_lead_s": -60.0,
+   "p25_lead_s": -90.0,
+   "p75_lead_s": -30.0,
+   "preemptive_share": 0.0038910505836575876,
+   "unsafe_moves": 22,
+   "gate_blocks_scn": 0,
+   "stale_hold_scn": 0,
+   "app_switch_scn": 0,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 5.824074074074074,
+     "impact": 2.3425925925925926,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 2.0,
+     "impact": 1.369047619047619,
+     "false": 0
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 6.966101694915254,
+     "impact": 1.1016949152542372,
+     "false": 4
+    },
+    "combined": {
+     "n": 83,
+     "fail": 5.674698795180723,
+     "impact": 2.0542168674698793,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.323076923076922,
+     "impact": 0.7384615384615385,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 4.405797101449275,
+     "impact": 0.7463768115942029,
+     "false": 3
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 47.714285714285715,
+     "impact": 2.1142857142857143,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1299.162162162162,
+     "impact": 20.39189189189189,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 6.636363636363637,
+     "impact": 1.4318181818181819,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 6.071428571428571,
+     "impact": 4.321428571428571,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     -0.20402298850574713,
+     -0.3822198275862069,
+     -0.011458333333333529
+    ],
+    "fail": [
+     -1.396551724137931,
+     -1.7529454022988504,
+     -1.0516522988505752
+    ],
+    "better": 171,
+    "worse": 108
+   }
+  },
+  "sap_aware_no_attribution": {
+   "n_recoverable": 348,
+   "fail_rec": [
+    5.206896551724138,
+    4.867744252873564,
+    5.543247126436781
+   ],
+   "impact_rec": [
+    2.060344827586207,
+    1.6120330459770114,
+    2.602083333333333
+   ],
+   "fail_hard": [
+    24.323076923076922,
+    23.8,
+    24.83076923076923
+   ],
+   "fail_mtu": [
+    47.714285714285715,
+    43.2,
+    52.34357142857142
+   ],
+   "impact_mtu": [
+    2.1142857142857143,
+    1.1,
+    3.9010714285714228
+   ],
+   "n_mtu": 35,
+   "mtu_switch_scn": 35,
+   "false_changes_all": 7,
+   "false_benign": 3,
+   "n_benign": 69,
+   "failovers_all": 455,
+   "resets_all": 2109,
+   "detected": 257,
+   "helpful": 298,
+   "median_lead_s": -60.0,
+   "p25_lead_s": -90.0,
+   "p75_lead_s": -30.0,
+   "preemptive_share": 0.0038910505836575876,
+   "unsafe_moves": 0,
+   "gate_blocks_scn": 22,
+   "stale_hold_scn": 14,
+   "app_switch_scn": 37,
+   "n_app": 37,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail": 5.824074074074074,
+     "impact": 2.3425925925925926,
+     "false": 0
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail": 2.0,
+     "impact": 1.369047619047619,
+     "false": 0
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail": 6.966101694915254,
+     "impact": 1.1016949152542372,
+     "false": 4
+    },
+    "combined": {
+     "n": 83,
+     "fail": 5.674698795180723,
+     "impact": 2.0542168674698793,
+     "false": 0
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail": 24.323076923076922,
+     "impact": 0.7384615384615385,
+     "false": 0
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail": 4.405797101449275,
+     "impact": 0.7463768115942029,
+     "false": 3
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail": 47.714285714285715,
+     "impact": 2.1142857142857143,
+     "false": 0
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail": 1626.837837837838,
+     "impact": 21.60810810810811,
+     "false": 0
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail": 21.0,
+     "impact": 19.916666666666668,
+     "false": 0
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail": 68.0,
+     "impact": 22.704545454545453,
+     "false": 0
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail": 9.5,
+     "impact": 8.107142857142858,
+     "false": 0
+    }
+   },
+   "paired_vs_threshold": {
+    "impact": [
+     -0.05172413793103448,
+     -0.21408045977011494,
+     0.11637931034482758
+    ],
+    "fail": [
+     -1.2586206896551724,
+     -1.6035201149425287,
+     -0.9252873563218391
+    ],
+    "better": 163,
+    "worse": 108
+   }
+  }
+ },
+ "timeline": {
+  "sid": 0,
+  "onset_min": 32.16166666666667,
+  "threshold_failover_min": 39.5,
+  "sap_failover_min": 38.5,
+  "first_breach_min": 38.0,
+  "fail_threshold": 2,
+  "fail_sap": 2,
+  "events_sap": [
+   {
+    "t_s": 2310,
+    "action": "failover",
+    "reason": "predicted_slo_threat",
+    "window": 76
+   }
+  ]
+ }
+}

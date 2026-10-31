@@ -1,0 +1,48 @@
+{
+ "t_s": 2310,
+ "decision": "failover",
+ "reason": "predicted_slo_threat",
+ "decided_on_window": 76,
+ "risk_primary": 0.9973,
+ "risk_prev_window": 0.9953,
+ "theta": 0.99,
+ "primary": {
+  "lat_p95_ms": 94.0,
+  "loss_pct": 0.02,
+  "jitter_ms": 1.6,
+  "fiori_ratio": 1.21,
+  "rfc_ratio": 1.78,
+  "tier1_p95_ms": 1943.0
+ },
+ "backup": {
+  "eligible": true,
+  "lat_p95_ms": 65.4,
+  "loss_pct": 0.05,
+  "jitter_ms": 1.9,
+  "fiori_ratio": 1.04
+ },
+ "features": {
+  "latency_p95_norm": 0.54,
+  "loss_norm": 0.007,
+  "jitter_norm": 0.053,
+  "latency_trend_90s": 0.034,
+  "loss_max_2min": 0.007,
+  "fiori_probe_ratio": 0.211,
+  "rfc_probe_ratio": 0.784,
+  "fiori_trend_90s": -0.084,
+  "tier1_user_p95_ratio": 0.462
+ },
+ "logit_contributions": {
+  "latency_p95_norm": 3.11,
+  "loss_norm": -0.59,
+  "jitter_norm": 0.16,
+  "latency_trend_90s": 0.59,
+  "loss_max_2min": 0.49,
+  "fiori_probe_ratio": -0.33,
+  "rfc_probe_ratio": -0.01,
+  "fiori_trend_90s": -0.01,
+  "tier1_user_p95_ratio": 1.38
+ },
+ "intercept": 1.13,
+ "logit": 5.92
+}

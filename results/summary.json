@@ -1,0 +1,1864 @@
+{
+ "config": {
+  "tick_s": 5,
+  "window_ticks": 6,
+  "scenario_s": 3600,
+  "tx_per_tick": 20,
+  "round_trips": 12,
+  "rto_ms": 300.0,
+  "timeout_ms": 3000.0,
+  "slo_p95_ms": 1800.0,
+  "server_median_ms": 350.0,
+  "server_sigma": 0.5,
+  "primary": {
+   "base_ms": 48.0,
+   "jitter_ms": 2.0,
+   "loss_pct": 0.02,
+   "cap_mbps": 1000.0
+  },
+  "backup": {
+   "base_ms": 61.0,
+   "jitter_ms": 4.0,
+   "loss_pct": 0.05,
+   "cap_mbps": 600.0
+  },
+  "demand_mbps": [
+   450.0,
+   800.0
+  ],
+  "tier_share": {
+   "t1": 0.4,
+   "t2": 0.33,
+   "t3": 0.27
+  },
+  "switch_reset_frac": 0.15,
+  "failback_windows": 20,
+  "horizon_windows": 10,
+  "persistence": 2,
+  "thr": {
+   "lat_ms": 95.0,
+   "loss_pct": 1.0,
+   "jit_ms": 18.0
+  },
+  "norm": {
+   "lat": [
+    40.0,
+    140.0
+   ],
+   "loss": [
+    0.0,
+    3.0
+   ],
+   "jit": [
+    0.0,
+    30.0
+   ]
+  },
+  "fault_mix": {
+   "progressive_latency": 0.16,
+   "loss_burst": 0.14,
+   "jitter_instability": 0.12,
+   "combined": 0.12,
+   "hard_failure": 0.1,
+   "benign_transient": 0.1,
+   "mtu_blackhole": 0.06,
+   "app_side_slowdown": 0.08,
+   "shared_risk": 0.04,
+   "backup_ineligible": 0.04,
+   "stale_telemetry": 0.04
+  },
+  "large_payload_share": 0.35,
+  "false_change_cost": 20.0
+ },
+ "seeds": {
+  "train": 1001,
+  "valid": 2002,
+  "test": 3003
+ },
+ "sizes": {
+  "train": 400,
+  "valid": 200,
+  "test": 600
+ },
+ "tuned": {
+  "operator": {},
+  "bfd_only": {},
+  "threshold": {},
+  "weighted": {
+   "weights": [
+    0.4,
+    0.35,
+    0.15,
+    0.1
+   ],
+   "backup_cost": 0.3,
+   "margin": 0.2
+  },
+  "pred_network": {
+   "theta": 0.99
+  },
+  "sap_aware": {
+   "theta": 0.99
+  }
+ },
+ "coefficients": {
+  "pred_network": {
+   "latency_p95_norm": 4.016,
+   "loss_norm": 1.714,
+   "jitter_norm": -1.058,
+   "latency_trend_90s": 0.582,
+   "loss_max_2min": -1.131,
+   "intercept": -0.09
+  },
+  "sap_aware": {
+   "latency_p95_norm": 3.478,
+   "loss_norm": 1.595,
+   "jitter_norm": -0.877,
+   "latency_trend_90s": 0.651,
+   "loss_max_2min": -1.254,
+   "fiori_probe_ratio": 1.774,
+   "rfc_probe_ratio": -0.027,
+   "fiori_trend_90s": 0.031,
+   "tier1_user_p95_ratio": 4.34,
+   "intercept": 1.132
+  }
+ },
+ "tuning": [
+  {
+   "policy": "weighted",
+   "param": "margin",
+   "value": 0.03,
+   "objective": 146.26
+  },
+  {
+   "policy": "weighted",
+   "param": "margin",
+   "value": 0.06,
+   "objective": 145.98
+  },
+  {
+   "policy": "weighted",
+   "param": "margin",
+   "value": 0.1,
+   "objective": 145.38
+  },
+  {
+   "policy": "weighted",
+   "param": "margin",
+   "value": 0.15,
+   "objective": 144.46
+  },
+  {
+   "policy": "weighted",
+   "param": "margin",
+   "value": 0.2,
+   "objective": 143.88
+  },
+  {
+   "policy": "weighted",
+   "param": "margin",
+   "value": 0.3,
+   "objective": 149.52
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.3,
+   "objective": 146.98
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.5,
+   "objective": 145.82
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.7,
+   "objective": 144.65
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.8,
+   "objective": 143.56
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.9,
+   "objective": 143.33
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.95,
+   "objective": 143.28
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.97,
+   "objective": 143.14
+  },
+  {
+   "policy": "pred_network",
+   "param": "theta",
+   "value": 0.99,
+   "objective": 143.0
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.3,
+   "objective": 88.0
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.5,
+   "objective": 86.55
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.7,
+   "objective": 85.5
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.8,
+   "objective": 84.61
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.9,
+   "objective": 84.3
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.95,
+   "objective": 84.2
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.97,
+   "objective": 84.27
+  },
+  {
+   "policy": "sap_aware",
+   "param": "theta",
+   "value": 0.99,
+   "objective": 84.02
+  }
+ ],
+ "summary": {
+  "operator": {
+   "fail": {
+    "mean": 4431.9,
+    "lo": 3236.62,
+    "hi": 5627.18,
+    "min": 1031,
+    "max": 9565
+   },
+   "false_changes": {
+    "mean": 0.55,
+    "lo": 0.19,
+    "hi": 0.91,
+    "min": 0,
+    "max": 2
+   },
+   "failovers": {
+    "mean": 17.7,
+    "lo": 16.56,
+    "hi": 18.84,
+    "min": 13,
+    "max": 21
+   },
+   "impact_min": {
+    "mean": 267.62,
+    "lo": 249.36,
+    "hi": 285.89,
+    "min": 213,
+    "max": 349
+   },
+   "detected": {
+    "mean": 15.9,
+    "lo": 14.65,
+    "hi": 17.15,
+    "min": 11,
+    "max": 21
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 25.6,
+    "lo": 14.57,
+    "hi": 36.63,
+    "min": 0,
+    "max": 79
+   },
+   "held_stale": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "held_app": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "resets": {
+    "mean": 78.5,
+    "lo": 71.36,
+    "hi": 85.64,
+    "min": 57,
+    "max": 111
+   },
+   "helpful_total": 452,
+   "detected_total": 318,
+   "median_lead_s": -600.0,
+   "preemptive_share": 0.0,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 28.51,
+     "false_changes": 0,
+     "impact_min_per_scn": 12.48
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 2.42,
+     "false_changes": 4,
+     "impact_min_per_scn": 1.38
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 4.75,
+     "false_changes": 7,
+     "impact_min_per_scn": 3.77
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 16.31,
+     "false_changes": 0,
+     "impact_min_per_scn": 11.95
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.71
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 0.99,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.63
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 891.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.74
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 43.79,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.73
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 68.14,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.5
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 19.07,
+     "false_changes": 0,
+     "impact_min_per_scn": 13.04
+    }
+   }
+  },
+  "bfd_only": {
+   "fail": {
+    "mean": 4672.55,
+    "lo": 3459.64,
+    "hi": 5885.46,
+    "min": 1284,
+    "max": 9825
+   },
+   "false_changes": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "failovers": {
+    "mean": 3.25,
+    "lo": 2.54,
+    "hi": 3.96,
+    "min": 1,
+    "max": 6
+   },
+   "impact_min": {
+    "mean": 366.78,
+    "lo": 342.76,
+    "hi": 390.79,
+    "min": 267,
+    "max": 437
+   },
+   "detected": {
+    "mean": 3.25,
+    "lo": 2.54,
+    "hi": 3.96,
+    "min": 1,
+    "max": 6
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "held_stale": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "held_app": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "resets": {
+    "mean": 9.7,
+    "lo": 7.5,
+    "hi": 11.9,
+    "min": 2,
+    "max": 21
+   },
+   "helpful_total": 452,
+   "detected_total": 65,
+   "median_lead_s": -20.0,
+   "preemptive_share": 0.0,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 67.92,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.08
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 2.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 1.37
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 1.54,
+     "false_changes": 0,
+     "impact_min_per_scn": 4.28
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 26.28,
+     "false_changes": 0,
+     "impact_min_per_scn": 21.44
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.71
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 0.99,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.63
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 891.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.74
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 63.95,
+     "false_changes": 0,
+     "impact_min_per_scn": 23.18
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 61.43,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.54
+    }
+   }
+  },
+  "threshold": {
+   "fail": {
+    "mean": 4273.75,
+    "lo": 3092.24,
+    "hi": 5455.26,
+    "min": 953,
+    "max": 9325
+   },
+   "false_changes": {
+    "mean": 2.8,
+    "lo": 2.08,
+    "hi": 3.52,
+    "min": 0,
+    "max": 6
+   },
+   "failovers": {
+    "mean": 24.25,
+    "lo": 23.16,
+    "hi": 25.34,
+    "min": 18,
+    "max": 28
+   },
+   "impact_min": {
+    "mean": 161.62,
+    "lo": 138.98,
+    "hi": 184.27,
+    "min": 90,
+    "max": 289
+   },
+   "detected": {
+    "mean": 20.7,
+    "lo": 19.48,
+    "hi": 21.92,
+    "min": 16,
+    "max": 26
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 23.0,
+    "lo": 14.02,
+    "hi": 31.98,
+    "min": 0,
+    "max": 66
+   },
+   "held_stale": {
+    "mean": 2.65,
+    "lo": 1.08,
+    "hi": 4.22,
+    "min": 0,
+    "max": 9
+   },
+   "held_app": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "resets": {
+    "mean": 117.35,
+    "lo": 110.47,
+    "hi": 124.23,
+    "min": 85,
+    "max": 139
+   },
+   "helpful_total": 452,
+   "detected_total": 414,
+   "median_lead_s": -60.0,
+   "preemptive_share": 0.087,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 5.54,
+     "false_changes": 0,
+     "impact_min_per_scn": 3.15
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 7.13,
+     "false_changes": 34,
+     "impact_min_per_scn": 0.81
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 7.53,
+     "false_changes": 4,
+     "impact_min_per_scn": 0.5
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 5.8,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.19
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.71
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 5.51,
+     "false_changes": 18,
+     "impact_min_per_scn": 0.91
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 891.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.74
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 68.36,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.73
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 9.14,
+     "false_changes": 0,
+     "impact_min_per_scn": 8.25
+    }
+   }
+  },
+  "weighted": {
+   "fail": {
+    "mean": 4257.3,
+    "lo": 3077.97,
+    "hi": 5436.63,
+    "min": 943,
+    "max": 9297
+   },
+   "false_changes": {
+    "mean": 1.05,
+    "lo": 0.61,
+    "hi": 1.49,
+    "min": 0,
+    "max": 3
+   },
+   "failovers": {
+    "mean": 20.4,
+    "lo": 19.24,
+    "hi": 21.56,
+    "min": 15,
+    "max": 24
+   },
+   "impact_min": {
+    "mean": 182.5,
+    "lo": 161.13,
+    "hi": 203.87,
+    "min": 116,
+    "max": 292
+   },
+   "detected": {
+    "mean": 18.7,
+    "lo": 17.33,
+    "hi": 20.07,
+    "min": 12,
+    "max": 23
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 19.4,
+    "lo": 11.71,
+    "hi": 27.09,
+    "min": 0,
+    "max": 58
+   },
+   "held_stale": {
+    "mean": 0.95,
+    "lo": 0.17,
+    "hi": 1.73,
+    "min": 0,
+    "max": 5
+   },
+   "held_app": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "resets": {
+    "mean": 95.7,
+    "lo": 87.83,
+    "hi": 103.57,
+    "min": 62,
+    "max": 121
+   },
+   "helpful_total": 452,
+   "detected_total": 374,
+   "median_lead_s": -90.0,
+   "preemptive_share": 0.08,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 6.35,
+     "false_changes": 0,
+     "impact_min_per_scn": 6.73
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 6.0,
+     "false_changes": 17,
+     "impact_min_per_scn": 0.64
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 7.42,
+     "false_changes": 4,
+     "impact_min_per_scn": 0.52
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 5.92,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.67
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.71
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 0.99,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.63
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 891.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.74
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 68.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.75
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 8.71,
+     "false_changes": 0,
+     "impact_min_per_scn": 9.89
+    }
+   }
+  },
+  "pred_network": {
+   "fail": {
+    "mean": 4246.0,
+    "lo": 3066.29,
+    "hi": 5425.71,
+    "min": 943,
+    "max": 9280
+   },
+   "false_changes": {
+    "mean": 0.35,
+    "lo": 0.12,
+    "hi": 0.58,
+    "min": 0,
+    "max": 1
+   },
+   "failovers": {
+    "mean": 18.55,
+    "lo": 17.5,
+    "hi": 19.6,
+    "min": 14,
+    "max": 24
+   },
+   "impact_min": {
+    "mean": 170.58,
+    "lo": 150.05,
+    "hi": 191.1,
+    "min": 104,
+    "max": 279
+   },
+   "detected": {
+    "mean": 18.0,
+    "lo": 16.97,
+    "hi": 19.03,
+    "min": 13,
+    "max": 23
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 22.8,
+    "lo": 13.89,
+    "hi": 31.71,
+    "min": 0,
+    "max": 65
+   },
+   "held_stale": {
+    "mean": 2.45,
+    "lo": 1.01,
+    "hi": 3.89,
+    "min": 0,
+    "max": 8
+   },
+   "held_app": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "resets": {
+    "mean": 86.2,
+    "lo": 79.82,
+    "hi": 92.58,
+    "min": 61,
+    "max": 110
+   },
+   "helpful_total": 452,
+   "detected_total": 360,
+   "median_lead_s": -90.0,
+   "preemptive_share": 0.0,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 5.86,
+     "false_changes": 0,
+     "impact_min_per_scn": 3.25
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 2.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 1.37
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 6.24,
+     "false_changes": 4,
+     "impact_min_per_scn": 1.7
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 5.92,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.92
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.71
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 4.35,
+     "false_changes": 3,
+     "impact_min_per_scn": 0.75
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 891.23,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.74
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 67.82,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.73
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 9.07,
+     "false_changes": 0,
+     "impact_min_per_scn": 8.29
+    }
+   }
+  },
+  "sap_aware": {
+   "fail": {
+    "mean": 2771.8,
+    "lo": 1544.94,
+    "hi": 3998.66,
+    "min": 221,
+    "max": 8839
+   },
+   "false_changes": {
+    "mean": 0.35,
+    "lo": 0.08,
+    "hi": 0.62,
+    "min": 0,
+    "max": 2
+   },
+   "failovers": {
+    "mean": 20.9,
+    "lo": 19.89,
+    "hi": 21.91,
+    "min": 18,
+    "max": 25
+   },
+   "impact_min": {
+    "mean": 131.12,
+    "lo": 112.93,
+    "hi": 149.32,
+    "min": 73,
+    "max": 221
+   },
+   "detected": {
+    "mean": 20.35,
+    "lo": 19.45,
+    "hi": 21.25,
+    "min": 18,
+    "max": 24
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 23.95,
+    "lo": 14.56,
+    "hi": 33.34,
+    "min": 0,
+    "max": 68
+   },
+   "held_stale": {
+    "mean": 3.25,
+    "lo": 1.35,
+    "hi": 5.15,
+    "min": 0,
+    "max": 13
+   },
+   "held_app": {
+    "mean": 61.25,
+    "lo": 37.13,
+    "hi": 85.37,
+    "min": 0,
+    "max": 192
+   },
+   "resets": {
+    "mean": 97.35,
+    "lo": 90.8,
+    "hi": 103.9,
+    "min": 75,
+    "max": 118
+   },
+   "helpful_total": 452,
+   "detected_total": 407,
+   "median_lead_s": -60.0,
+   "preemptive_share": 0.002,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 5.82,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.34
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 2.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 1.37
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 6.97,
+     "false_changes": 4,
+     "impact_min_per_scn": 1.1
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 5.67,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.05
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.32,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.74
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 4.41,
+     "false_changes": 3,
+     "impact_min_per_scn": 0.75
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 47.71,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.11
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 68.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.7
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 9.5,
+     "false_changes": 0,
+     "impact_min_per_scn": 8.11
+    }
+   }
+  },
+  "sap_aware_no_admission": {
+   "fail": {
+    "mean": 16728.7,
+    "lo": 13930.17,
+    "hi": 19527.23,
+    "min": 8309,
+    "max": 33833
+   },
+   "false_changes": {
+    "mean": 0.35,
+    "lo": 0.08,
+    "hi": 0.62,
+    "min": 0,
+    "max": 2
+   },
+   "failovers": {
+    "mean": 20.9,
+    "lo": 19.89,
+    "hi": 21.91,
+    "min": 18,
+    "max": 25
+   },
+   "impact_min": {
+    "mean": 433.7,
+    "lo": 408.45,
+    "hi": 458.95,
+    "min": 320,
+    "max": 510
+   },
+   "detected": {
+    "mean": 20.35,
+    "lo": 19.45,
+    "hi": 21.25,
+    "min": 18,
+    "max": 24
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 23.95,
+    "lo": 14.56,
+    "hi": 33.34,
+    "min": 0,
+    "max": 68
+   },
+   "held_stale": {
+    "mean": 3.25,
+    "lo": 1.35,
+    "hi": 5.15,
+    "min": 0,
+    "max": 13
+   },
+   "held_app": {
+    "mean": 61.25,
+    "lo": 37.13,
+    "hi": 85.37,
+    "min": 0,
+    "max": 192
+   },
+   "resets": {
+    "mean": 97.35,
+    "lo": 90.8,
+    "hi": 103.9,
+    "min": 75,
+    "max": 118
+   },
+   "helpful_total": 452,
+   "detected_total": 407,
+   "median_lead_s": -60.0,
+   "preemptive_share": 0.002,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 686.11,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.79
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 2.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 1.37
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 595.15,
+     "false_changes": 4,
+     "impact_min_per_scn": 15.13
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 881.83,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.79
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 584.86,
+     "false_changes": 0,
+     "impact_min_per_scn": 14.26
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 180.55,
+     "false_changes": 3,
+     "impact_min_per_scn": 4.88
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 883.74,
+     "false_changes": 0,
+     "impact_min_per_scn": 18.59
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 419.77,
+     "false_changes": 0,
+     "impact_min_per_scn": 29.86
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 913.36,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.61
+    }
+   }
+  },
+  "sap_aware_no_gates": {
+   "fail": {
+    "mean": 2701.9,
+    "lo": 1467.81,
+    "hi": 3935.99,
+    "min": 198,
+    "max": 8839
+   },
+   "false_changes": {
+    "mean": 0.35,
+    "lo": 0.08,
+    "hi": 0.62,
+    "min": 0,
+    "max": 2
+   },
+   "failovers": {
+    "mean": 21.1,
+    "lo": 20.05,
+    "hi": 22.15,
+    "min": 18,
+    "max": 26
+   },
+   "impact_min": {
+    "mean": 105.08,
+    "lo": 89.36,
+    "hi": 120.79,
+    "min": 34,
+    "max": 163
+   },
+   "detected": {
+    "mean": 20.55,
+    "lo": 19.66,
+    "hi": 21.44,
+    "min": 18,
+    "max": 24
+   },
+   "unsafe": {
+    "mean": 1.1,
+    "lo": 0.67,
+    "hi": 1.53,
+    "min": 0,
+    "max": 3
+   },
+   "blocked_gate": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "held_stale": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "held_app": {
+    "mean": 61.25,
+    "lo": 37.13,
+    "hi": 85.37,
+    "min": 0,
+    "max": 192
+   },
+   "resets": {
+    "mean": 98.1,
+    "lo": 91.2,
+    "hi": 105.0,
+    "min": 75,
+    "max": 122
+   },
+   "helpful_total": 452,
+   "detected_total": 411,
+   "median_lead_s": -60.0,
+   "preemptive_share": 0.002,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 5.82,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.34
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 2.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 1.37
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 6.97,
+     "false_changes": 4,
+     "impact_min_per_scn": 1.1
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 5.67,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.05
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.32,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.74
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 4.41,
+     "false_changes": 3,
+     "impact_min_per_scn": 0.75
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 47.71,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.11
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1299.16,
+     "false_changes": 0,
+     "impact_min_per_scn": 20.39
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 6.64,
+     "false_changes": 0,
+     "impact_min_per_scn": 1.43
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 6.07,
+     "false_changes": 0,
+     "impact_min_per_scn": 4.32
+    }
+   }
+  },
+  "sap_aware_no_attribution": {
+   "fail": {
+    "mean": 3378.0,
+    "lo": 2011.89,
+    "hi": 4744.11,
+    "min": 221,
+    "max": 9910
+   },
+   "false_changes": {
+    "mean": 0.35,
+    "lo": 0.08,
+    "hi": 0.62,
+    "min": 0,
+    "max": 2
+   },
+   "failovers": {
+    "mean": 22.75,
+    "lo": 21.51,
+    "hi": 23.99,
+    "min": 18,
+    "max": 26
+   },
+   "impact_min": {
+    "mean": 133.38,
+    "lo": 114.77,
+    "hi": 151.98,
+    "min": 73,
+    "max": 223
+   },
+   "detected": {
+    "mean": 20.35,
+    "lo": 19.45,
+    "hi": 21.25,
+    "min": 18,
+    "max": 24
+   },
+   "unsafe": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "blocked_gate": {
+    "mean": 23.95,
+    "lo": 14.56,
+    "hi": 33.34,
+    "min": 0,
+    "max": 68
+   },
+   "held_stale": {
+    "mean": 3.25,
+    "lo": 1.35,
+    "hi": 5.15,
+    "min": 0,
+    "max": 13
+   },
+   "held_app": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "resets": {
+    "mean": 105.45,
+    "lo": 97.98,
+    "hi": 112.92,
+    "min": 75,
+    "max": 132
+   },
+   "helpful_total": 452,
+   "detected_total": 407,
+   "median_lead_s": -60.0,
+   "preemptive_share": 0.002,
+   "by_type": {
+    "progressive_latency": {
+     "n": 108,
+     "fail_per_scn": 5.82,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.34
+    },
+    "loss_burst": {
+     "n": 84,
+     "fail_per_scn": 2.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 1.37
+    },
+    "jitter_instability": {
+     "n": 59,
+     "fail_per_scn": 6.97,
+     "false_changes": 4,
+     "impact_min_per_scn": 1.1
+    },
+    "combined": {
+     "n": 83,
+     "fail_per_scn": 5.67,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.05
+    },
+    "hard_failure": {
+     "n": 65,
+     "fail_per_scn": 24.32,
+     "false_changes": 0,
+     "impact_min_per_scn": 0.74
+    },
+    "benign_transient": {
+     "n": 69,
+     "fail_per_scn": 4.41,
+     "false_changes": 3,
+     "impact_min_per_scn": 0.75
+    },
+    "mtu_blackhole": {
+     "n": 35,
+     "fail_per_scn": 47.71,
+     "false_changes": 0,
+     "impact_min_per_scn": 2.11
+    },
+    "app_side_slowdown": {
+     "n": 37,
+     "fail_per_scn": 1626.84,
+     "false_changes": 0,
+     "impact_min_per_scn": 21.61
+    },
+    "shared_risk": {
+     "n": 24,
+     "fail_per_scn": 21.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 19.92
+    },
+    "backup_ineligible": {
+     "n": 22,
+     "fail_per_scn": 68.0,
+     "false_changes": 0,
+     "impact_min_per_scn": 22.7
+    },
+    "stale_telemetry": {
+     "n": 14,
+     "fail_per_scn": 9.5,
+     "false_changes": 0,
+     "impact_min_per_scn": 8.11
+    }
+   }
+  }
+ },
+ "confusion": {
+  "sap_aware": {
+   "tp": 14846,
+   "fp": 42,
+   "fn": 6768,
+   "tn": 50344,
+   "precision": 0.997,
+   "recall": 0.687
+  },
+  "pred_network": {
+   "tp": 11567,
+   "fp": 34,
+   "fn": 10047,
+   "tn": 50352,
+   "precision": 0.997,
+   "recall": 0.535
+  }
+ },
+ "theta_sensitivity": [
+  {
+   "theta": 0.3,
+   "fail_per_scn": 94.5,
+   "false_changes": 44,
+   "failovers": 528
+  },
+  {
+   "theta": 0.5,
+   "fail_per_scn": 93.96,
+   "false_changes": 26,
+   "failovers": 505
+  },
+  {
+   "theta": 0.7,
+   "fail_per_scn": 93.26,
+   "false_changes": 20,
+   "failovers": 482
+  },
+  {
+   "theta": 0.8,
+   "fail_per_scn": 92.88,
+   "false_changes": 9,
+   "failovers": 457
+  },
+  {
+   "theta": 0.9,
+   "fail_per_scn": 92.58,
+   "false_changes": 7,
+   "failovers": 434
+  },
+  {
+   "theta": 0.95,
+   "fail_per_scn": 92.42,
+   "false_changes": 7,
+   "failovers": 423
+  },
+  {
+   "theta": 0.97,
+   "fail_per_scn": 92.26,
+   "false_changes": 8,
+   "failovers": 420
+  },
+  {
+   "theta": 0.99,
+   "fail_per_scn": 92.39,
+   "false_changes": 7,
+   "failovers": 418
+  }
+ ],
+ "weight_sensitivity": [
+  {
+   "draw": 0,
+   "fail_per_scn": 143.44,
+   "false_changes": 16
+  },
+  {
+   "draw": 1,
+   "fail_per_scn": 143.62,
+   "false_changes": 17
+  },
+  {
+   "draw": 2,
+   "fail_per_scn": 143.4,
+   "false_changes": 11
+  },
+  {
+   "draw": 3,
+   "fail_per_scn": 143.57,
+   "false_changes": 13
+  },
+  {
+   "draw": 4,
+   "fail_per_scn": 143.36,
+   "false_changes": 12
+  },
+  {
+   "draw": 5,
+   "fail_per_scn": 143.4,
+   "false_changes": 13
+  },
+  {
+   "draw": 6,
+   "fail_per_scn": 144.09,
+   "false_changes": 15
+  },
+  {
+   "draw": 7,
+   "fail_per_scn": 143.39,
+   "false_changes": 13
+  },
+  {
+   "draw": 8,
+   "fail_per_scn": 143.57,
+   "false_changes": 13
+  },
+  {
+   "draw": 9,
+   "fail_per_scn": 142.93,
+   "false_changes": 6
+  },
+  {
+   "draw": 10,
+   "fail_per_scn": 143.72,
+   "false_changes": 17
+  },
+  {
+   "draw": 11,
+   "fail_per_scn": 143.43,
+   "false_changes": 15
+  },
+  {
+   "draw": 12,
+   "fail_per_scn": 143.52,
+   "false_changes": 16
+  },
+  {
+   "draw": 13,
+   "fail_per_scn": 143.63,
+   "false_changes": 16
+  },
+  {
+   "draw": 14,
+   "fail_per_scn": 143.16,
+   "false_changes": 10
+  },
+  {
+   "draw": 15,
+   "fail_per_scn": 143.39,
+   "false_changes": 14
+  },
+  {
+   "draw": 16,
+   "fail_per_scn": 143.31,
+   "false_changes": 11
+  },
+  {
+   "draw": 17,
+   "fail_per_scn": 142.76,
+   "false_changes": 2
+  },
+  {
+   "draw": 18,
+   "fail_per_scn": 143.38,
+   "false_changes": 13
+  },
+  {
+   "draw": 19,
+   "fail_per_scn": 143.45,
+   "false_changes": 15
+  },
+  {
+   "draw": 20,
+   "fail_per_scn": 143.69,
+   "false_changes": 19
+  },
+  {
+   "draw": 21,
+   "fail_per_scn": 143.43,
+   "false_changes": 14
+  },
+  {
+   "draw": 22,
+   "fail_per_scn": 143.34,
+   "false_changes": 8
+  },
+  {
+   "draw": 23,
+   "fail_per_scn": 143.46,
+   "false_changes": 13
+  },
+  {
+   "draw": 24,
+   "fail_per_scn": 143.6,
+   "false_changes": 17
+  },
+  {
+   "draw": 25,
+   "fail_per_scn": 143.39,
+   "false_changes": 12
+  },
+  {
+   "draw": 26,
+   "fail_per_scn": 143.13,
+   "false_changes": 6
+  },
+  {
+   "draw": 27,
+   "fail_per_scn": 143.56,
+   "false_changes": 13
+  },
+  {
+   "draw": 28,
+   "fail_per_scn": 143.74,
+   "false_changes": 19
+  },
+  {
+   "draw": 29,
+   "fail_per_scn": 142.76,
+   "false_changes": 2
+  }
+ ],
+ "capacity_sweep": [
+  {
+   "backup_mbps": 300,
+   "admission": true,
+   "fail_per_scn": 2366.35,
+   "impact_min_per_scn": 18.983
+  },
+  {
+   "backup_mbps": 300,
+   "admission": false,
+   "fail_per_scn": 2778.01,
+   "impact_min_per_scn": 18.983
+  },
+  {
+   "backup_mbps": 400,
+   "admission": true,
+   "fail_per_scn": 1034.25,
+   "impact_min_per_scn": 16.32
+  },
+  {
+   "backup_mbps": 400,
+   "admission": false,
+   "fail_per_scn": 2452.3,
+   "impact_min_per_scn": 18.983
+  },
+  {
+   "backup_mbps": 500,
+   "admission": true,
+   "fail_per_scn": 157.29,
+   "impact_min_per_scn": 10.335
+  },
+  {
+   "backup_mbps": 500,
+   "admission": false,
+   "fail_per_scn": 1538.41,
+   "impact_min_per_scn": 18.077
+  },
+  {
+   "backup_mbps": 600,
+   "admission": true,
+   "fail_per_scn": 86.92,
+   "impact_min_per_scn": 4.338
+  },
+  {
+   "backup_mbps": 600,
+   "admission": false,
+   "fail_per_scn": 552.65,
+   "impact_min_per_scn": 14.13
+  },
+  {
+   "backup_mbps": 700,
+   "admission": true,
+   "fail_per_scn": 86.81,
+   "impact_min_per_scn": 3.622
+  },
+  {
+   "backup_mbps": 700,
+   "admission": false,
+   "fail_per_scn": 130.3,
+   "impact_min_per_scn": 9.535
+  },
+  {
+   "backup_mbps": 800,
+   "admission": true,
+   "fail_per_scn": 86.8,
+   "impact_min_per_scn": 3.61
+  },
+  {
+   "backup_mbps": 800,
+   "admission": false,
+   "fail_per_scn": 87.12,
+   "impact_min_per_scn": 4.877
+  },
+  {
+   "backup_mbps": 1000,
+   "admission": true,
+   "fail_per_scn": 86.79,
+   "impact_min_per_scn": 3.6
+  },
+  {
+   "backup_mbps": 1000,
+   "admission": false,
+   "fail_per_scn": 86.81,
+   "impact_min_per_scn": 3.62
+  }
+ ]
+}
